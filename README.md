@@ -1,224 +1,76 @@
-# 🚚 E-Commerce Delivery Prediction System  
-### 📊 End-to-End Machine Learning Project
+# 📦 E-Commerce Delivery Prediction
+
+A complete end-to-end machine learning project for predicting delivery outcomes in an e-commerce environment.  
+The project combines **data analysis, feature engineering, and multiple classification models** to deliver reliable predictions and business insights.
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange)
+![pandas](https://img.shields.io/badge/pandas-1.3+-blue)
+![NumPy](https://img.shields.io/badge/numpy-1.21+-lightgrey)
+![Matplotlib](https://img.shields.io/badge/matplotlib-3.5+-green)
 
 ---
 
-> 💡 A complete machine learning pipeline that analyzes and predicts delivery outcomes in e-commerce logistics using real-world data.
+## 📚 Table of Contents
 
----
-
-## 🌟 Overview
-
-This project builds a full **data science and machine learning workflow** to predict delivery outcomes for e-commerce orders.
-
-The system classifies each order into:
-
-- ✅ Delivered  
-- ⏳ Delayed  
-- 🔄 Returned  
-
-The pipeline includes everything from **data exploration → feature engineering → modeling → evaluation → insights**, making it a complete real-world ML project.
-
----
-
-## 🎯 Problem Statement
-
-In e-commerce, delivery performance directly affects:
-
-- Customer satisfaction  
-- Operational efficiency  
-- Return rates  
-- Business profitability  
-
-This project aims to **predict delivery issues before they happen**, helping businesses optimize logistics and decision-making.
-
----
-
-## 🧠 Objectives
-
-- Understand patterns in delivery performance  
-- Identify key factors behind delays and returns  
-- Engineer new predictive features  
-- Train and compare multiple ML models  
-- Select the best model using **F1-score**  
-- Generate insights from data  
-
----
-
-## 🛠️ Tech Stack
-
-- 🐍 Python  
-- 📊 Pandas  
-- 🔢 NumPy  
-- 📈 Matplotlib  
-- 🤖 Scikit-learn  
-
----
-
-## 📂 Project Structure
-
-```
-E-commerce-Delivery-Prediction/
-│
-├── data/                # Dataset
-├── figures/             # All generated visualizations
-├── outputs/             # Processed data and results
-│
-├── main.py              # Full ML pipeline
-└── README.md
-```
+- 📊 Dataset  
+- 🧱 Project Structure  
+- ⚙️ Installation  
+- 🔄 Pipeline Overview  
+- 🤖 Models Used  
+- 📈 Results  
+- 📊 Visual Outputs  
+- 📐 Evaluation Metrics  
+- 📂 Outputs  
 
 ---
 
 ## 📊 Dataset
 
-- 📦 ~50,000 orders  
-- 🧾 Multiple features (shipping, cost, region, category, dates)  
-- 🎯 Target: `Delivery_Status`  
+The dataset contains **~50,000 e-commerce orders** with operational and customer-related features.
 
-Classes:
-- Delivered  
-- Delayed  
-- Returned  
+### 🎯 Target Variable
+- `Delivery_Status`  
+  - Delivered  
+  - Delayed  
+  - Returned  
 
----
-
-## 🔍 Exploratory Data Analysis (EDA)
-
-The project performs deep analysis to understand the data:
-
-- 📊 Distribution of delivery outcomes  
-- 🚚 Impact of shipping mode  
-- 🌍 Differences across regions  
-- 📦 Product category trends  
-- ⏱️ Delivery time patterns  
-- 💰 Shipping cost distribution  
-- 📅 Time trends across months  
-- 🔥 Feature correlations  
-- 📉 Outlier detection  
+### 📌 Key Features
+- Shipping Cost 💸  
+- Delivery Days ⏱️  
+- Shipping Mode 🚚  
+- Customer Region 🌍  
+- Product Category 🛍️  
+- Order / Ship / Delivery Dates 📅  
 
 ---
 
-## ⚙️ Feature Engineering
+## 🧱 Project Structure
 
-New features were created to improve prediction:
-
-- ⏳ `processing_time` → time between order and shipment  
-- 📅 `order_month`, `order_dayofweek`, `quarter`  
-- 🚀 shipping indicators (`is_express`, `is_same_day`)  
-- 💸 `cost_per_day` → efficiency metric  
-- 🌐 one-hot encoded categorical features  
-
----
-
-## 🤖 Machine Learning Models
-
-The following models were trained:
-
-- Logistic Regression  
-- Decision Tree  
-- Random Forest  
-- Support Vector Machine (SVM)  
-- Gradient Boosting  
-
----
-
-## 📈 Model Evaluation
-
-Models are evaluated using:
-
-- Accuracy  
-- Precision  
-- Recall  
-- ⭐ F1 Score (main metric)  
-
-✔️ Best model is automatically selected.
+```
+project/
+│
+├── data/
+│   └── dataset.csv
+│
+├── figures/
+│   └── (16 generated visualizations)
+│
+├── outputs/
+│   ├── X_train.csv
+│   ├── X_test.csv
+│   ├── y_train.csv
+│   ├── y_test.csv
+│   ├── predictions.csv
+│   └── model_comparison.csv
+│
+├── main.py
+└── README.md
+```
 
 ---
 
-## 📊 Visualizations (VERY IMPORTANT)
-
-This project generates **16 professional figures** stored in the `figures/` folder.
-
-### 📌 What each figure represents:
-
-**Figure 01 — Target Distribution**  
-Shows how many orders are Delivered, Delayed, or Returned.
-
-**Figure 02 — Shipping Mode Analysis**  
-Compares shipping types (Standard, Express, Same Day) and their delivery success rates.
-
-**Figure 03 — Regional Analysis**  
-Shows how delivery performance varies across customer regions.
-
-**Figure 04 — Product Category Analysis**  
-Analyzes which product types have more delays or returns.
-
-**Figure 05 — Delivery Days Analysis**  
-Shows distribution and average delivery times per status.
-
-**Figure 06 — Shipping Cost Analysis**  
-Examines how cost relates to delivery outcome.
-
-**Figure 07 — Temporal Trends**  
-Shows how deliveries change over time (monthly trends).
-
-**Figure 08 — Scatter + Outliers**  
-Visualizes relationship between cost and delivery days + detects anomalies.
-
-**Figure 09 — Correlation Matrix**  
-Shows relationships between numerical features.
-
-**Figure 10 — Engineered Features**  
-Visualizes new features like processing time and cost efficiency.
-
-**Figure 11 — Model Comparison**  
-Compares all ML models across metrics.
-
-**Figure 12 — Radar Chart**  
-Shows model performance in a multi-metric visual way.
-
-**Figure 13 — Confusion Matrices**  
-Displays prediction accuracy for each model.
-
-**Figure 14 — Feature Importance**  
-Shows which features influence predictions the most.
-
-**Figure 15 — Per-Class Metrics**  
-Shows precision/recall/F1 for each class.
-
-**Figure 16 — Final Dashboard**  
-A summary combining key results and insights.
-
----
-
-## 🧾 Outputs
-
-### 📁 outputs/
-
-- X_train.csv, X_test.csv  
-- y_train.csv, y_test.csv  
-- model_comparison.csv  
-- predictions.csv  
-- feature_importance.csv  
-
-### 📁 figures/
-
-- 16 generated PNG visualizations  
-
----
-
-## 💡 Key Insights
-
-- 🚚 Shipping mode strongly impacts delivery success  
-- 🌍 Some regions experience more delays  
-- 💰 Higher cost does not guarantee faster delivery  
-- ⏱️ Processing time is a key predictor  
-- 📦 Product category affects return probability  
-
----
-
-## 🚀 How to Run
+## ⚙️ Installation
 
 Install dependencies:
 
@@ -234,31 +86,147 @@ python main.py
 
 ---
 
-## 🏁 Final Result
+## 🔄 Pipeline Overview
 
-✔️ Full ML pipeline implemented  
-✔️ Multiple models compared  
-✔️ Best model selected  
-✔️ Professional visual analysis generated  
+This project follows a full machine learning workflow:
+
+### 1️⃣ Data Exploration (EDA)
+- Target distribution 📊  
+- Shipping mode analysis 🚚  
+- Regional & category insights 🌍  
+- Delivery time and cost distributions ⏱️💸  
+- Temporal trends 📅  
+- Correlation analysis 🔗  
+- Outlier detection ⚠️  
+
+---
+
+### 2️⃣ Feature Engineering
+- Processing time (Order → Shipment) ⏳  
+- Time-based features (month, weekday, quarter) 📅  
+- Shipping mode indicators 🚚  
+- Cost efficiency (cost per day) 💰  
+- Categorical encoding 🔢  
+
+---
+
+### 3️⃣ Model Training
+
+The following models are implemented:
+
+- Logistic Regression  
+- Decision Tree 🌳  
+- Random Forest 🌲  
+- Support Vector Machine  
+- Gradient Boosting ⚡  
+
+---
+
+### 4️⃣ Evaluation
+
+Models are compared using:
+
+- Accuracy  
+- Precision (macro)  
+- Recall (macro)  
+- F1 Score (macro)  
+
+---
+
+## 🤖 Models Used
+
+Each model is trained and evaluated under the same conditions to ensure fair comparison.
+
+The best model is selected based on **F1 Score**, which balances performance across all classes.
+
+---
+
+## 📈 Results
+
+- Multiple models are trained and benchmarked  
+- The best-performing model is automatically selected  
+- Results are exported and visualized  
+
+---
+
+## 📊 Visual Outputs
+
+The project generates **16 high-quality figures** stored in the `figures/` folder:
+
+### 📌 Data Analysis
+- Target distribution  
+- Shipping mode vs delivery outcome  
+- Regional performance  
+- Product category impact  
+
+### 📌 Feature Insights
+- Delivery time distributions  
+- Shipping cost analysis  
+- Cost efficiency (cost/day)  
+- Temporal trends  
+
+### 📌 Advanced Analysis
+- Scatter plots (feature relationships)  
+- Outlier detection  
+- Correlation heatmap  
+
+### 📌 Model Evaluation
+- Model comparison chart  
+- Radar chart  
+- Confusion matrices  
+- Feature importance  
+- Per-class metrics  
+- Final dashboard summary  
+
+👉 These visuals help understand both **data behavior** and **model performance**
+
+---
+
+## 📐 Evaluation Metrics
+
+The main evaluation metric:
+
+### ⭐ F1 Score (Macro Average)
+
+Why?
+- Handles class imbalance  
+- Balances precision & recall  
+- Ensures fair performance across all delivery outcomes  
+
+---
+
+## 📂 Outputs
+
+### 📁 Data Splits
+- X_train.csv  
+- X_test.csv  
+- y_train.csv  
+- y_test.csv  
+
+### 📁 Model Outputs
+- model_comparison.csv  
+- predictions.csv  
+
+### 📁 Visualizations
+- figures/ (16 plots)
+
+---
+
+## 🧠 Conclusion
+
+This project demonstrates a **complete machine learning pipeline** applied to a real-world logistics problem.
+
+Key takeaways:
+- Feature engineering significantly improves performance  
+- Data visualization is critical for understanding patterns  
+- Model comparison ensures optimal selection  
+- F1 Score provides reliable evaluation for multi-class problems  
 
 ---
 
 ## 👩‍💻 Authors
 
-Ola Gurthi & Viola Makishti  
-🎓 UNYT — Machine Learning Project  
+**Ola Gurthi**  
+**Viola Makishti**  
 
----
-
-## ⭐ Final Note
-
-This project demonstrates a complete real-world ML workflow:
-
-📊 Data → ⚙️ Features → 🤖 Models → 📈 Insights  
-
----
-
-⭐ If you like it:
-- Star the repo  
-- Add it to your portfolio  
-- Improve and expand it 🚀
+Machine Learning Project — UNYT
